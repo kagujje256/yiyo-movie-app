@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yiyo.movies.data.api.RetrofitClient
 import com.yiyo.movies.data.model.Movie
-import com.yiyo.movies.ui.components.MovieRow
+import com.yiyo.movies.ui.components.MovieCard
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
