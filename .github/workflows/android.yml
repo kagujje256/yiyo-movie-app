@@ -24,17 +24,12 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --info 2>&1 | tee gradle.log
+        run: ./gradlew assembleDebug
 
-      - name: Upload logs on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: gradle-logs
-          path: gradle.log
+      - name: Find APK
+        run: find app/build -name "*.apk" -type f || echo "No APK found"
 
       - name: Upload APK
-        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: yiyo-movie-app-debug
